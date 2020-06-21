@@ -12,7 +12,7 @@ data class Detail (
     val StartDate: String,
     val EndtDate: String,
     val north: Double,
-    val south: Double,
+    val east: Double,
     val City: String,
     val FullAddr: String,
     val Book_url: String,

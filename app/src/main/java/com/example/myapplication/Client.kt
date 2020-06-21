@@ -6,15 +6,21 @@ import java.io.InputStreamReader
 import java.io.PrintWriter
 import java.net.Socket
 import java.util.*;
+import kotlin.concurrent.thread
 
 class Client {
-    fun main(type: String): String {
+    fun main(discrit:String,type: String): String {
         val host = "ec2-3-22-229-250.us-east-2.compute.amazonaws.com"
-        val port = 8000
+        val port = 8001
+        val discrit = discrit
+
         val clientMessage = type
         try {
             val socket = Socket(host, port)
             var writer = PrintWriter(socket.getOutputStream())
+            writer.write(discrit)
+            writer.flush()
+            Thread.sleep(500)
             writer.write(clientMessage)
             writer.flush()
             val reader = BufferedReader(InputStreamReader(socket.getInputStream()))
