@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         intent.setClass(this@MainActivity, DetalActivity::class.java)
 
         val city = arrayListOf<String>("台中市")
-        val destination = arrayListOf<String>("西屯", "西")
+        val destination = arrayListOf<String>("西屯", "西","南")
         val type = arrayListOf<String>(
             "noType",
             "Learning",
